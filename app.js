@@ -16,4 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Registering all routes
 app.use(routes);
 
+// Registering all helper functions for template engine
+app.locals.helpers = helpers;
+
 app.listen(process.env.APP_PORT, () => console.log(`App running on ${process.env.APP_URL}:${process.env.APP_PORT}/`));
