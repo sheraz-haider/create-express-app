@@ -1,9 +1,6 @@
 class HomeController {
   static index(req, res) {
-    res.send(`
-      <h1>Expess</h1>
-      <p>Welcome to Express</p>
-    `);
+    res.render("index", { title: process.env.APP_NAME });
   }
 }
 

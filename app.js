@@ -3,7 +3,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const logger = require('morgan'); 
+const helpers = require('./app/Helpers/helpers');
 const routes = require('./routes/index');
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Don't need body-parser package for express apps 4.16+
 app.use(express.json());
